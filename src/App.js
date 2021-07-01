@@ -5,8 +5,12 @@ import  Sumario from './components/Sumarios'
 import { useState } from "react";
 import Footer from './components/Footer'
 import About from './components/About'
+import AddSum from './components/AddSum'
+import { FaTasks } from 'react-icons/fa';
+import Sumarios from './components/Sumarios';
 
 function App() {
+  const[showAddSumario,setShowAddSumario] = useState(false)
   const [sumarios, setSumarios] = useState([
     {
       id: 1,
@@ -46,6 +50,12 @@ function App() {
     },
   ])
 
+  //add Sumario
+  const addSumario = (sumario) =>{
+    const id = Math.floor(Math.random()*10000+1)
+    const newSumario = {id,...sumario}
+    setSumarios([...sumarios,newSumario])
+  }
 
   //Open Sumario
   //Todo later
@@ -60,8 +70,8 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <Header/>
-        
+        <Header onAdd={()=>setShowAddSumario(!showAddSumario)} showSumario={showAddSumario}/>
+        {showAddSumario && <AddSum onAdd={addSumario}/>}
         <Route path='/' exact render={(props)=>(
             <>
             {sumarios.length > 0 ? <Sumario sumarios={sumarios}
