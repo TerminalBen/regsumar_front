@@ -10,13 +10,14 @@
 // );
 import Sumario from './Sumario'
 
-const Sumarios = ({sumarios,onOpen}) => {
+const Sumarios = ({sumarios,onOpen,onDelete}) => {
     return (
         <>
             {sumarios.map((sumario) =>(
                  <Sumario key={sumario.id} 
                  sumario={sumario}
                  onOpen = {onOpen}
+                 onDelete={onDelete}
                  />
             ))}
         </>
