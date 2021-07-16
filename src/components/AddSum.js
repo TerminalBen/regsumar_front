@@ -42,7 +42,7 @@ const AddSum = ({onAdd}) => {
         <form className = 'add-form' onSubmit={onSubmit}>
             <div className='form-control'>
                 <label>Disciplina</label>
-                <input type='number' placeholder='Disciplina' value={id_disciplina} onChange={(e) => setDisciplina(e.target.value)} />
+                <input type='number' placeholder='id Disciplina(integer)' value={id_disciplina} onChange={(e) => setDisciplina(e.target.value)} />
             </div>
             <div className='form-control'>
                 <label>Titulo</label>
@@ -58,7 +58,7 @@ const AddSum = ({onAdd}) => {
             </div>
             <div className='form-control'>
                 <label>Validate</label>
-                <input type='number' placeholder='validate?' value={validate} onChange={(e) => setValidate(e.target.value)} />
+                <input type='number' placeholder='validate(0 ou 1)' value={validate} onChange={(e) => setValidate(e.target.value)} />
             </div>
             <div className='form-control'>
                 <label>Descrição</label>
